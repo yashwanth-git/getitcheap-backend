@@ -5,6 +5,7 @@ require("dotenv").config();
 
 //Routes
 const itemRoutes = require("./routes/items");
+const userRoutes = require("./routes/users");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(cors());
 
 //Middlewares for Routes
 app.use("/items", itemRoutes);
+app.use("/users", userRoutes);
 
 //Connect to mongoDB
 const PORT = process.env.PORT || 5000;
