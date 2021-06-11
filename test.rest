@@ -7,3 +7,7 @@ Content-Type: application/json
 ###
 GET http://localhost:5000/items/60b526575752ac49bc8b9a18
 
+###
+GET http://localhost:5000/items/user-items
+
+

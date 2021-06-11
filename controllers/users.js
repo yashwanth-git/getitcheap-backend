@@ -5,8 +5,10 @@ const userModel = require("../models/usersModel");
 
 const signin = async (req, res) => {
   const { email, password } = req.body;
+  console.log(email);
   try {
     const existingUser = await userModel.findOne({ email });
+    console.log(existingUser);
     //If user already exists
     if (!existingUser)
       return res.status(404).json({ message: "User does not exist." });
@@ -21,7 +23,7 @@ const signin = async (req, res) => {
 
     const token = jwt.sign(
       { email: existingUser.email, id: existingUser._id },
-      "TEST",
+      "test",
       { expiresIn: "1h" }
     );
     res.status(200).json({ result: existingUser, token });
