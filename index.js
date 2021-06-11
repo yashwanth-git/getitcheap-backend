@@ -18,6 +18,10 @@ app.use(cors());
 app.use("/items", itemRoutes);
 app.use("/users", userRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Get It Cheap API");
+});
+
 //Connect to mongoDB
 const PORT = process.env.PORT || 5000;
 mongoose
